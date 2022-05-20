@@ -11,18 +11,22 @@ const SignIn = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleSubmit = (): void => {
+    navigation.navigate("Home")
+  }
+
   return (
     <Center flex={1} p={10} bg="white">
       <FormControl>
         <FormControl.Label>Username</FormControl.Label>
-        <Input placeholder="Username" value={username} 
-        onChangeText={(str) => setUsername(str)}
+        <Input placeholder="Username" value={username}
+          onChangeText={(str) => setUsername(str)}
         />
         <FormControl.Label>Password</FormControl.Label>
-        <Input placeholder="Password" value={password} 
-        onChangeText={(str) => setPassword(str)}
+        <Input placeholder="Password" value={password}
+          onChangeText={(str) => setPassword(str)}
         />
-        <Button my={5}>Sign In</Button>
+        <Button my={5} onPress={handleSubmit}>Sign In</Button>
       </FormControl>
     </Center>
   )
